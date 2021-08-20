@@ -73,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C225A65A26D030BB00D35195 /* Binding */ = {
+			isa = PBXGroup;
+			children = (
+				C293C0ED26CFB9DB00D8E118 /* Box.swift */,
+			);
+			path = Binding;
+			sourceTree = "<group>";
+		};
 		C247FAC726CE615C00141971 = {
 			isa = PBXGroup;
 			children = (
@@ -284,7 +292,7 @@
 				C2D8DBFF26CED99F00200AE3 /* ViewModel */,
 				C2D8DBF726CE9AB100200AE3 /* Controller */,
 				C2D8DC0026CED9A900200AE3 /* API */,
-				C293C0ED26CFB9DB00D8E118 /* Box.swift */,
+				C225A65A26D030BB00D35195 /* Binding */,
 			);
 			path = Login;
 			sourceTree = "<group>";
