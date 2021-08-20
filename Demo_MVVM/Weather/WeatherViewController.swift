@@ -15,33 +15,33 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var weatherTemperatureLabel: UILabel!
     
     //MARK:- PROPERTIES
-    private var viewModel: WeatherViewModel?{
-        didSet {
-            self.updateUI()
-        }
-    }
-    
-    var loader : WeatherLoader!
+    private let viewModel =  WeatherViewModel()
     
     var countryName: String = ""
     
     //MARK:- LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-        loader.loadWeatherData(countryName: countryName) { [weak self] (weather) in
+        navigationItem.title = countryName
+        getWeatherData()
+    }
+    
+    //MARK:- CONFIGURE
+    func updateUI(viewModel:WeatherViewModel){
+        weatherDescriptionLabel.text = viewModel.weatherDescription
+        weatherTemperatureLabel.text = viewModel.temperature
+    }
+    
+    //MARK:- HELPERS
+    private func getWeatherData(){
+        viewModel.loadWeatherData(countryName: countryName) { [weak self] (weather) in
             DispatchQueue.main.async {
                 if let data = weather {
-                    self?.viewModel = WeatherViewModel(data)
+                    self?.updateUI(viewModel: WeatherViewModel(data))
                 } else {
                     self?.displayErrorMesssage("No data available")
                 }
             }
         }
-    }
-    
-    //MARK:- CONFIGURE
-    func updateUI(){
-        weatherDescriptionLabel.text = viewModel?.weatherDescription
-        weatherTemperatureLabel.text = viewModel?.temperature
     }
 }

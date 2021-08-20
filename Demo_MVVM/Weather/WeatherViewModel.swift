@@ -8,26 +8,31 @@
 
 import Foundation
 
+protocol WeatherLoader {
+    func loadWeatherData(countryName:String,completion:@escaping(Weather?)->Void)
+}
+
 class WeatherViewModel {
-    let weatherData: Weather
+    private var weatherData: Weather?
     
-    init(_ data:Weather){
+    convenience init(_ data:Weather){
+        self.init()
         self.weatherData = data
     }
     
     var weatherDescription: String {
-        return weatherData.weatherInfo.first?.longDescription ?? ""
+        return weatherData?.weatherInfo.first?.longDescription.capitalized ?? ""
     }
     
     var temperature: String {
-        let temp = weatherData.temperatureInfo.temperature
+        guard let temp = weatherData?.temperatureInfo.temperature else { return "" }
         let temperatureInCelcius = temp - 273.15
         return "\(String(format: "%.2f", temperatureInCelcius))º Celcius"
     }
 }
 
-class RemoteWeatherDataLoader: WeatherLoader{
-    
+//MARK:- API CALL
+extension WeatherViewModel: WeatherLoader {
     func loadWeatherData(countryName: String, completion: @escaping (Weather?) -> Void) {
         WeatherService.getWeatherData(countryName) { (result) in
             switch result{
@@ -38,9 +43,4 @@ class RemoteWeatherDataLoader: WeatherLoader{
             }
         }
     }
-}
-
-
-protocol WeatherLoader {
-    func loadWeatherData(countryName:String,completion:@escaping(Weather?)->Void)
 }

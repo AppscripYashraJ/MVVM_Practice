@@ -30,6 +30,7 @@ class CountriesViewController: UITableViewController {
     //MARK:- LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Countries List"
         self.countriesViewModel = CountriesListViewModel(countryName: countriesList)
     }
 }
@@ -62,7 +63,6 @@ extension CountriesViewController {
         if let name = countriesViewModel?.didSelectRow(indexPath.row) {
             if let weatherVC = storyboard?.instantiateViewController(withIdentifier: "WeatherViewController") as? WeatherViewController {
                 weatherVC.countryName = name
-                weatherVC.loader = RemoteWeatherDataLoader()
                 self.navigationController?.pushViewController(weatherVC, animated: true)
             }
         }
