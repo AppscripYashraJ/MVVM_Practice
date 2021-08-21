@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,11 @@
 		C27B2AD226CFFA1600179BE1 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27B2AD126CFFA1600179BE1 /* Weather.swift */; };
 		C27B2AD426CFFA2300179BE1 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27B2AD326CFFA2300179BE1 /* WeatherViewModel.swift */; };
 		C27B2AD926CFFA7700179BE1 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27B2AD826CFFA7700179BE1 /* WeatherService.swift */; };
+		C28DF20426D0F9D0004E92CD /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28DF20326D0F9D0004E92CD /* NotesListViewController.swift */; };
+		C28DF20626D0F9DF004E92CD /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28DF20526D0F9DF004E92CD /* NotesModel.swift */; };
+		C28DF20B26D10A90004E92CD /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28DF20A26D10A90004E92CD /* NoteTableViewCell.swift */; };
+		C28DF21026D13628004E92CD /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28DF20F26D13628004E92CD /* DatabaseManager.swift */; };
+		C28DF21226D13CB0004E92CD /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28DF21126D13CB0004E92CD /* NotesViewModel.swift */; };
 		C293C0EE26CFB9DB00D8E118 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293C0ED26CFB9DB00D8E118 /* Box.swift */; };
 		C2D8DBE926CE7F5000200AE3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8DBE826CE7F5000200AE3 /* Person.swift */; };
 		C2D8DBED26CE7FB500200AE3 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8DBEC26CE7FB500200AE3 /* PersonViewModel.swift */; };
@@ -31,9 +36,12 @@
 		C2D8DBF926CED2F400200AE3 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8DBF826CED2F400200AE3 /* LoginService.swift */; };
 		C2D8DBFB26CED6F500200AE3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8DBFA26CED6F500200AE3 /* UserViewModel.swift */; };
 		C2D8DBFD26CED8DE00200AE3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8DBFC26CED8DE00200AE3 /* User.swift */; };
+		E5FFAE3ADA70EEDB3696B046 /* Pods_Demo_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 467508033969C22853EB5221 /* Pods_Demo_MVVM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		467508033969C22853EB5221 /* Pods_Demo_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8898EAE66FF70AB6946654F6 /* Pods-Demo_MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_MVVM.debug.xcconfig"; path = "Target Support Files/Pods-Demo_MVVM/Pods-Demo_MVVM.debug.xcconfig"; sourceTree = "<group>"; };
 		C247FAD026CE615C00141971 /* Demo_MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo_MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C247FAD326CE615C00141971 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C247FAD526CE615C00141971 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +60,11 @@
 		C27B2AD126CFFA1600179BE1 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		C27B2AD326CFFA2300179BE1 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		C27B2AD826CFFA7700179BE1 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		C28DF20326D0F9D0004E92CD /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
+		C28DF20526D0F9DF004E92CD /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
+		C28DF20A26D10A90004E92CD /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		C28DF20F26D13628004E92CD /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		C28DF21126D13CB0004E92CD /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		C293C0ED26CFB9DB00D8E118 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		C2D8DBE826CE7F5000200AE3 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C2D8DBEC26CE7FB500200AE3 /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
@@ -60,6 +73,7 @@
 		C2D8DBF826CED2F400200AE3 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		C2D8DBFA26CED6F500200AE3 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		C2D8DBFC26CED8DE00200AE3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E9AEFEC4F170E138348A951B /* Pods-Demo_MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_MVVM.release.xcconfig"; path = "Target Support Files/Pods-Demo_MVVM/Pods-Demo_MVVM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,12 +81,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5FFAE3ADA70EEDB3696B046 /* Pods_Demo_MVVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00CCBE55DC6174A7BFD43184 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8898EAE66FF70AB6946654F6 /* Pods-Demo_MVVM.debug.xcconfig */,
+				E9AEFEC4F170E138348A951B /* Pods-Demo_MVVM.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C225A65A26D030BB00D35195 /* Binding */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,11 +105,21 @@
 			path = Binding;
 			sourceTree = "<group>";
 		};
+		C247C6A926D16E3C00288753 /* DatabaseQueries */ = {
+			isa = PBXGroup;
+			children = (
+				C28DF20F26D13628004E92CD /* DatabaseManager.swift */,
+			);
+			path = DatabaseQueries;
+			sourceTree = "<group>";
+		};
 		C247FAC726CE615C00141971 = {
 			isa = PBXGroup;
 			children = (
 				C247FAD226CE615C00141971 /* Demo_MVVM */,
 				C247FAD126CE615C00141971 /* Products */,
+				00CCBE55DC6174A7BFD43184 /* Pods */,
+				EE065F905AF6482A7A90F8A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +137,7 @@
 				C2D8DBF426CE98EB00200AE3 /* Login */,
 				C2D8DBF326CE96F900200AE3 /* Person */,
 				C27B2ABF26CFDE7D00179BE1 /* Weather */,
+				C28DF20926D0FA00004E92CD /* Notes */,
 				C26ED89826CF7AAE003EBBBD /* Extensions */,
 				C27B2AC526CFE86B00179BE1 /* Utilities */,
 				C247FAD926CE615C00141971 /* Main.storyboard */,
@@ -234,6 +269,50 @@
 			name = API;
 			sourceTree = "<group>";
 		};
+		C28DF20726D0F9E7004E92CD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C28DF20326D0F9D0004E92CD /* NotesListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C28DF20826D0F9F1004E92CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C28DF20526D0F9DF004E92CD /* NotesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C28DF20926D0FA00004E92CD /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				C28DF20826D0F9F1004E92CD /* Model */,
+				C28DF20C26D10A99004E92CD /* View */,
+				C28DF21326D13CC2004E92CD /* ViewModel */,
+				C28DF20726D0F9E7004E92CD /* Controller */,
+				C247C6A926D16E3C00288753 /* DatabaseQueries */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
+		C28DF20C26D10A99004E92CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C28DF20A26D10A90004E92CD /* NoteTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C28DF21326D13CC2004E92CD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C28DF21126D13CB0004E92CD /* NotesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C2D8DBEA26CE7F9100200AE3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +408,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		EE065F905AF6482A7A90F8A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				467508033969C22853EB5221 /* Pods_Demo_MVVM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,9 +423,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C247FAE426CE615F00141971 /* Build configuration list for PBXNativeTarget "Demo_MVVM" */;
 			buildPhases = (
+				78ED3B68E08BB4F05008A8C8 /* [CP] Check Pods Manifest.lock */,
 				C247FACC26CE615C00141971 /* Sources */,
 				C247FACD26CE615C00141971 /* Frameworks */,
 				C247FACE26CE615C00141971 /* Resources */,
+				F28976E2F209339F0046D891 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,6 +484,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		78ED3B68E08BB4F05008A8C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Demo_MVVM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F28976E2F209339F0046D891 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demo_MVVM/Pods-Demo_MVVM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demo_MVVM/Pods-Demo_MVVM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo_MVVM/Pods-Demo_MVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C247FACC26CE615C00141971 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -407,6 +538,7 @@
 				C2D8DBF126CE80E700200AE3 /* PersonTableViewCell.swift in Sources */,
 				C247FAD826CE615C00141971 /* ViewController.swift in Sources */,
 				C2D8DBED26CE7FB500200AE3 /* PersonViewModel.swift in Sources */,
+				C28DF21026D13628004E92CD /* DatabaseManager.swift in Sources */,
 				C27B2AC426CFE84D00179BE1 /* Constants.swift in Sources */,
 				C26ED89726CF7AA6003EBBBD /* Extension.swift in Sources */,
 				C27B2ABD26CFDE7300179BE1 /* Country.swift in Sources */,
@@ -415,9 +547,13 @@
 				C27B2ACD26CFEF1D00179BE1 /* CountriesViewModel.swift in Sources */,
 				C27B2AD926CFFA7700179BE1 /* WeatherService.swift in Sources */,
 				C247FAD626CE615C00141971 /* SceneDelegate.swift in Sources */,
+				C28DF21226D13CB0004E92CD /* NotesViewModel.swift in Sources */,
 				C2D8DBFB26CED6F500200AE3 /* UserViewModel.swift in Sources */,
+				C28DF20626D0F9DF004E92CD /* NotesModel.swift in Sources */,
+				C28DF20B26D10A90004E92CD /* NoteTableViewCell.swift in Sources */,
 				C27B2AC926CFEBA800179BE1 /* CountryTableViewCell.swift in Sources */,
 				C27B2AD226CFFA1600179BE1 /* Weather.swift in Sources */,
+				C28DF20426D0F9D0004E92CD /* NotesListViewController.swift in Sources */,
 				C293C0EE26CFB9DB00D8E118 /* Box.swift in Sources */,
 				C2D8DBFD26CED8DE00200AE3 /* User.swift in Sources */,
 				C2D8DBF926CED2F400200AE3 /* LoginService.swift in Sources */,
@@ -562,6 +698,7 @@
 		};
 		C247FAE526CE615F00141971 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8898EAE66FF70AB6946654F6 /* Pods-Demo_MVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -573,12 +710,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-Embed.Demo-MVVM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		C247FAE626CE615F00141971 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9AEFEC4F170E138348A951B /* Pods-Demo_MVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -590,7 +728,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-Embed.Demo-MVVM";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
