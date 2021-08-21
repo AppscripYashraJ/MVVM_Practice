@@ -9,15 +9,18 @@
 import UIKit
 
 class NoteTableViewCell: UITableViewCell {
+    
     //MARK:- OUTLETS
     @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var createdAtLabel: UILabel!
     
     //MARK:- PROPERTIES
     static let reuseIdentifier = "NoteTableViewCell"
     
-    var note: Note?{
+    var noteVM: NoteViewModel?{
         didSet{
-            updateUI(viewModel: note)
+            updateUI(viewModel: noteVM)
         }
     }
     
@@ -27,8 +30,9 @@ class NoteTableViewCell: UITableViewCell {
     }
     
     //MARK:- COFIGURE
-    func updateUI(viewModel:Note?){
+    func updateUI(viewModel:NoteViewModel?){
         titleLabel.text = viewModel?.title
         accessoryType = viewModel?.isCompleted == true ? .checkmark : .none
+        createdAtLabel.text = viewModel?.createdDate
     }
 }

@@ -11,11 +11,11 @@ import UIKit
 class NotesListViewController: UITableViewController {
     
     //MARK:- PROPERTIES
-    private var viewModel = NotesViewModel()
+    private var viewModel = NotesListViewModel()
     
     private var notes: [Note]? {
         didSet {
-            viewModel = NotesViewModel(notes: notes ?? [Note]())
+            viewModel = NotesListViewModel(notes: notes ?? [Note]())
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -69,8 +69,9 @@ extension NotesListViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: NoteTableViewCell.reuseIdentifier, for: indexPath) as! NoteTableViewCell
-        let note = viewModel.noteAtIndexPath(indexPath.row)
-        cell.note = note
+        if let note = viewModel.noteAtIndexPath(indexPath.row) {
+            cell.noteVM = NoteViewModel(note)
+        }
         return cell
     }
 }

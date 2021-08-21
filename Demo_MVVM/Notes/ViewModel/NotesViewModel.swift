@@ -8,18 +8,35 @@
 
 import Foundation
 
-class NotesViewModel {
+struct NotesListViewModel {
+    let notes: [Note]
     
-    private var notes : [Note]?
-    
-    convenience init(notes: [Note]){
-        self.init()
+    init(notes:[Note] = [Note]()) {
         self.notes = notes
     }
 }
 
-//MARK:- DATABASE UPDATES
-extension NotesViewModel {
+//MARK:- TABLEVIEW METHODS
+extension NotesListViewModel {
+    var numberOfSections: Int {
+        return 1
+    }
+    
+    func numberOfRows()->Int?{
+        return notes.count
+    }
+    
+    func noteAtIndexPath(_ index:Int)->Note?{
+        return notes[index]
+    }
+    
+    func selectNoteAtIndex(_ index:Int){
+        updateNote(note: notes[index])
+    }
+}
+
+//MARK:- DATABASE MANIPUATIONS
+extension NotesListViewModel {
     func addNote(_ text:String){
         DatabaseManager.shared.addNote(object:Note(text: text, isCompleted: false))
     }
@@ -41,25 +58,27 @@ extension NotesViewModel {
     }
 }
 
-//MARK:- TABLEVIEW METHODS
-extension NotesViewModel {
-    var numberOfSections: Int {
-        return 1
+struct NoteViewModel {
+    private var note :Note
+    
+    init(_ note:Note) {
+        self.note = note
     }
     
-    func numberOfRows()->Int?{
-        return notes?.count
+    var title: String {
+        note.title
     }
     
-    func noteAtIndexPath(_ index:Int)->Note?{
-        let note = notes?[index]
-        return note
+    var createdDate:String {
+        let date = note.dateCreated
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second,.minute,.hour,.day,.month,.year]
+        formatter.maximumUnitCount = 1
+        formatter.unitsStyle = .full
+        return "\(formatter.string(from: date, to: Date()) ?? "") ago"
     }
     
-    func selectNoteAtIndex(_ index:Int){
-        if let note = notes?[index] {
-            self.updateNote(note: note)
-        }
+    var isCompleted: Bool{
+        return note.isCompleted
     }
 }
-

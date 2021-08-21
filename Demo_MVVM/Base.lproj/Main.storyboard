@@ -161,20 +161,29 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEA-CC-7jd">
-                                            <rect key="frame" x="40" y="11.5" width="42" height="21"/>
+                                            <rect key="frame" x="30" y="11.5" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRt-fQ-8AA">
+                                            <rect key="frame" x="342" y="11.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="mEA-CC-7jd" secondAttribute="trailing" constant="20" id="955-yu-St1"/>
-                                        <constraint firstItem="mEA-CC-7jd" firstAttribute="leading" secondItem="cSm-op-IYQ" secondAttribute="leadingMargin" constant="20" id="YKb-eZ-hB9"/>
+                                        <constraint firstItem="CRt-fQ-8AA" firstAttribute="centerY" secondItem="cSm-op-IYQ" secondAttribute="centerY" id="3Nx-fe-ezk"/>
+                                        <constraint firstItem="CRt-fQ-8AA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mEA-CC-7jd" secondAttribute="trailing" constant="10" id="WFa-7I-7WJ"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="CRt-fQ-8AA" secondAttribute="trailing" constant="10" id="Wf4-sx-ygZ"/>
+                                        <constraint firstItem="mEA-CC-7jd" firstAttribute="leading" secondItem="cSm-op-IYQ" secondAttribute="leadingMargin" constant="10" id="YKb-eZ-hB9"/>
                                         <constraint firstItem="mEA-CC-7jd" firstAttribute="centerY" secondItem="cSm-op-IYQ" secondAttribute="centerY" id="YKl-II-ZdI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="titleLabel" destination="mEA-CC-7jd" id="VrK-Dp-gI7"/>
+                                    <outlet property="createdAtLabel" destination="CRt-fQ-8AA" id="kbr-KP-e6U"/>
+                                    <outlet property="titleLabel" destination="mEA-CC-7jd" id="QpN-5U-lB9"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -193,7 +202,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJ9-z6-0XI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2288" y="-304"/>
+            <point key="canvasLocation" x="2159" y="-267"/>
         </scene>
         <!--Weather View Controller-->
         <scene sceneID="d1j-1m-58m">
