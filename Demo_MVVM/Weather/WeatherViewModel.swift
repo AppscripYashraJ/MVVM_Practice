@@ -21,11 +21,11 @@ class WeatherViewModel {
     }
     
     var weatherDescription: String {
-        return weatherData?.weatherInfo.first?.longDescription.capitalized ?? ""
+        return weatherData?.weatherInfo?.first?.longDescription?.capitalized ?? ""
     }
     
     var temperature: String {
-        guard let temp = weatherData?.temperatureInfo.temperature else { return "" }
+        guard let temp = weatherData?.temperatureInfo?.temp else { return "" }
         let temperatureInCelcius = temp - 273.15
         return "\(String(format: "%.2f", temperatureInCelcius))º Celcius"
     }

@@ -24,6 +24,8 @@ class WeatherService {
                 return
             }
             do {
+//                let jsonData = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+//                print(jsonData)
                 let weatherData = try JSONDecoder().decode(Weather.self, from: data)
                 completion(.success(weatherData))
             } catch let err {
