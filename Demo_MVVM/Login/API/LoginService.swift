@@ -8,9 +8,13 @@
 
 import Foundation
 
- class LoginService {
-    static func loginWithUser(_ userName : String,password:String,completion:(Bool)->Void) {
-        completion(true)
+class LoginService {
+    static func loginWithUser(_ email : String,password:String,completion:(Bool)->Void) {
+        if email == "yash@abc.com" && password == "yashraj123" {
+            completion(true)
+        } else {
+            completion(false)
+        }
     }
     
     static func generateAccessCode() -> String{
