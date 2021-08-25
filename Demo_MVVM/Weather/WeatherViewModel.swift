@@ -34,12 +34,22 @@ class WeatherViewModel {
 //MARK:- API CALL
 extension WeatherViewModel: WeatherLoader {
     func loadWeatherData(countryName: String, completion: @escaping (Weather?) -> Void) {
-        WeatherService.getWeatherData(countryName) { (result) in
+//        WeatherService.getWeatherData(countryName) { (result) in
+//            switch result{
+//            case .success(let data):
+//                completion(data)
+//            case .failure(_):
+//                completion(nil)
+//            }
+//        }
+
+        ServiceLayer.request(router: Router.getWeatherData(countryName)) { (result:Result<Weather,Error>) in
             switch result{
             case .success(let data):
                 completion(data)
             case .failure(_):
                 completion(nil)
+                print(result)
             }
         }
     }

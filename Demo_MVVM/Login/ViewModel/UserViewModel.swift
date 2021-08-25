@@ -8,9 +8,22 @@
 
 import Foundation
 
-enum UserValidationState {
+enum UserValidationState:Equatable,Comparable {
+    static func < (lhs: UserValidationState, rhs: UserValidationState) -> Bool {
+        return true
+    }
+    
     case Valid
     case Invalid(String)
+}
+
+enum ErrorMessages:String,Equatable,Comparable{
+    static func < (lhs: ErrorMessages, rhs: ErrorMessages) -> Bool {
+        return true
+    }
+    case passwordMinLength = "Password need to be atleast 8 characters"
+    case emailPasswordRequired = "Email and Passowrd is required"
+    case emailMinLength = "Email need to be atleast 10 characters"
 }
 
 class UserViewModel {
@@ -45,14 +58,14 @@ extension UserViewModel {
     
     func validate()->UserValidationState{
         if user.email.isEmpty || user.password.isEmpty {
-            return .Invalid("Email and Passowrd is required")
+            return .Invalid(ErrorMessages.emailPasswordRequired.rawValue)
         }
         if user.email.count < minEmailCharacterLimit {
-            return .Invalid("Email need to be atleast 10 characters")
+            return .Invalid(ErrorMessages.emailMinLength.rawValue)
         }
         
         if user.password.count < minimumPasswordCharactersLimit {
-            return .Invalid("Password need to be atleast 8 characters")
+            return .Invalid(ErrorMessages.passwordMinLength.rawValue)
         }
         return .Valid
     }
