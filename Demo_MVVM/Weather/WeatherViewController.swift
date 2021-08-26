@@ -23,7 +23,7 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = countryName
-        getWeatherData()
+        initViewModel()
     }
     
     //MARK:- CONFIGURE
@@ -33,15 +33,23 @@ class WeatherViewController: UIViewController {
     }
     
     //MARK:- HELPERS
-    private func getWeatherData(){
-        viewModel.loadWeatherData(countryName: countryName) { [weak self] (weather) in
+    
+    func initViewModel(){
+        viewModel.showAlertClosure = { [weak self] in
             DispatchQueue.main.async {
-                if let data = weather {
-                    self?.updateUI(viewModel: WeatherViewModel(data))
-                } else {
-                    self?.displayErrorMesssage("No data available")
+                if let message = self?.viewModel.alertMessage {
+                    self?.displayErrorMesssage(message)
                 }
             }
         }
+        
+        viewModel.updateUI = { [weak self] in
+            DispatchQueue.main.async {
+                self?.weatherDescriptionLabel.text = self?.viewModel.weatherDescription
+                self?.weatherTemperatureLabel.text = self?.viewModel.temperature
+            }
+        }
+        
+        viewModel.initFetchData(countryName)
     }
 }

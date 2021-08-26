@@ -13,7 +13,6 @@
 		C247FADB26CE615C00141971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C247FAD926CE615C00141971 /* Main.storyboard */; };
 		C247FADD26CE615F00141971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C247FADC26CE615F00141971 /* Assets.xcassets */; };
 		C247FAE026CE615F00141971 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C247FADE26CE615F00141971 /* LaunchScreen.storyboard */; };
-		C256A22426D5267D002D4AB4 /* Demo_MVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C256A22326D5267D002D4AB4 /* Demo_MVVMTests.swift */; };
 		C26ED89726CF7AA6003EBBBD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26ED89626CF7AA6003EBBBD /* Extension.swift */; };
 		C27B2ABD26CFDE7300179BE1 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27B2ABC26CFDE7300179BE1 /* Country.swift */; };
 		C27B2AC126CFE80400179BE1 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27B2AC026CFE80400179BE1 /* CountriesViewController.swift */; };
@@ -31,6 +30,7 @@
 		C28DF21226D13CB0004E92CD /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28DF21126D13CB0004E92CD /* NotesViewModel.swift */; };
 		C293C0EE26CFB9DB00D8E118 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = C293C0ED26CFB9DB00D8E118 /* Box.swift */; };
 		C2A01EBD26D6544E00BB3C0A /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A01EBC26D6544E00BB3C0A /* LoginModule.swift */; };
+		C2A01EBF26D655F900BB3C0A /* WeatherModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A01EBE26D655F900BB3C0A /* WeatherModule.swift */; };
 		C2D8DBE926CE7F5000200AE3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8DBE826CE7F5000200AE3 /* Person.swift */; };
 		C2D8DBED26CE7FB500200AE3 /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8DBEC26CE7FB500200AE3 /* PersonViewModel.swift */; };
 		C2D8DBF126CE80E700200AE3 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D8DBF026CE80E700200AE3 /* PersonTableViewCell.swift */; };
@@ -63,7 +63,6 @@
 		C247FADF26CE615F00141971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C247FAE126CE615F00141971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C256A22126D5267D002D4AB4 /* Demo_MVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo_MVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C256A22326D5267D002D4AB4 /* Demo_MVVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo_MVVMTests.swift; sourceTree = "<group>"; };
 		C256A22526D5267D002D4AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C26ED89626CF7AA6003EBBBD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		C27B2ABC26CFDE7300179BE1 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		C28DF21126D13CB0004E92CD /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		C293C0ED26CFB9DB00D8E118 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		C2A01EBC26D6544E00BB3C0A /* LoginModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModule.swift; sourceTree = "<group>"; };
+		C2A01EBE26D655F900BB3C0A /* WeatherModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModule.swift; sourceTree = "<group>"; };
 		C2D8DBE826CE7F5000200AE3 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C2D8DBEC26CE7FB500200AE3 /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		C2D8DBF026CE80E700200AE3 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
@@ -178,9 +178,9 @@
 		C256A22226D5267D002D4AB4 /* Demo_MVVMTests */ = {
 			isa = PBXGroup;
 			children = (
-				C256A22326D5267D002D4AB4 /* Demo_MVVMTests.swift */,
 				C256A22526D5267D002D4AB4 /* Info.plist */,
 				C2A01EBC26D6544E00BB3C0A /* LoginModule.swift */,
+				C2A01EBE26D655F900BB3C0A /* WeatherModule.swift */,
 			);
 			path = Demo_MVVMTests;
 			sourceTree = "<group>";
@@ -629,8 +629,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C256A22426D5267D002D4AB4 /* Demo_MVVMTests.swift in Sources */,
 				C2A01EBD26D6544E00BB3C0A /* LoginModule.swift in Sources */,
+				C2A01EBF26D655F900BB3C0A /* WeatherModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,16 +8,21 @@
 
 import Foundation
 
-protocol WeatherLoader {
+protocol WeatherLoaderProtocol {
     func loadWeatherData(countryName:String,completion:@escaping(Weather?)->Void)
 }
 
 class WeatherViewModel {
-    private var weatherData: Weather?
+    private var weatherData: Weather? {
+        didSet {
+            self.updateUI?()
+        }
+    }
     
-    convenience init(_ data:Weather){
-        self.init()
-        self.weatherData = data
+    let apiService: WeatherLoaderProtocol
+    
+     init(apiService: WeatherLoaderProtocol = APIService()){
+        self.apiService = apiService
     }
     
     var weatherDescription: String {
@@ -29,28 +34,25 @@ class WeatherViewModel {
         let temperatureInCelcius = temp - 273.15
         return "\(String(format: "%.2f", temperatureInCelcius))º Celcius"
     }
+    
+    var alertMessage: String? {
+        didSet {
+            self.showAlertClosure?()
+        }
+    }
+    
+    var updateUI: (()->())?
+    var showAlertClosure: (()->())?
 }
 
-//MARK:- API CALL
-extension WeatherViewModel: WeatherLoader {
-    func loadWeatherData(countryName: String, completion: @escaping (Weather?) -> Void) {
-//        WeatherService.getWeatherData(countryName) { (result) in
-//            switch result{
-//            case .success(let data):
-//                completion(data)
-//            case .failure(_):
-//                completion(nil)
-//            }
-//        }
-
-        ServiceLayer.request(router: Router.getWeatherData(countryName)) { (result:Result<Weather,Error>) in
-            switch result{
-            case .success(let data):
-                completion(data)
-            case .failure(_):
-                completion(nil)
-                print(result)
+extension WeatherViewModel {
+    func initFetchData(_ countryName: String){
+        apiService.loadWeatherData(countryName: countryName, completion: { (weather) in
+            if weather?.name == nil {
+                self.alertMessage = "No data available"
             }
-        }
+            self.weatherData = weather
+            
+        })
     }
 }
