@@ -21,7 +21,7 @@ class WeatherViewModel {
     
     let apiService: WeatherLoaderProtocol
     
-     init(apiService: WeatherLoaderProtocol = APIService()){
+    init(apiService: WeatherLoaderProtocol = APIService()){
         self.apiService = apiService
     }
     
@@ -41,6 +41,10 @@ class WeatherViewModel {
         }
     }
     
+    var countryName: String?{
+        return weatherData?.name
+    }
+    
     var updateUI: (()->())?
     var showAlertClosure: (()->())?
 }
@@ -54,5 +58,43 @@ extension WeatherViewModel {
             self.weatherData = weather
             
         })
+    }
+}
+
+class APIService: WeatherLoaderProtocol {
+    func loadWeatherData(countryName: String, completion: @escaping (Weather?) -> Void) {
+        ServiceLayer.request(router: Router.getWeatherData(countryName)) { (result:Result<Weather,Error>) in
+            switch result{
+            case .success(let data):
+                completion(data)
+            case .failure(_):
+                completion(nil)
+            }
+        }
+    }
+}
+
+class MockAPIService:WeatherLoaderProtocol {
+    
+    var completionClosure: ((Weather) -> ())?
+    func loadWeatherData(countryName: String, completion: @escaping (Weather?) -> Void) {
+        //Fetch Mock Data
+        let data = StubGenerator().stubWeatherData()
+        if countryName == data.name {
+            completion(data)
+        } else {
+            completion(nil)
+        }
+    }
+}
+
+class StubGenerator {
+    func stubWeatherData() -> Weather {
+        let path = Bundle.main.path(forResource: "content", ofType: "json")!
+        let data = try! Data(contentsOf: URL(fileURLWithPath: path))
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        let weatherData = try! decoder.decode(Weather.self, from: data)
+        return weatherData
     }
 }

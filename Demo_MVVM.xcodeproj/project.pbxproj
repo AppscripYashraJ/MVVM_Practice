@@ -13,6 +13,8 @@
 		C247FADB26CE615C00141971 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C247FAD926CE615C00141971 /* Main.storyboard */; };
 		C247FADD26CE615F00141971 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C247FADC26CE615F00141971 /* Assets.xcassets */; };
 		C247FAE026CE615F00141971 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C247FADE26CE615F00141971 /* LaunchScreen.storyboard */; };
+		C25407B426E32DAC00864942 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = C25407B326E32DAC00864942 /* content.json */; };
+		C25407B526E32DF300864942 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = C25407B326E32DAC00864942 /* content.json */; };
 		C26ED89726CF7AA6003EBBBD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26ED89626CF7AA6003EBBBD /* Extension.swift */; };
 		C27B2ABD26CFDE7300179BE1 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27B2ABC26CFDE7300179BE1 /* Country.swift */; };
 		C27B2AC126CFE80400179BE1 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27B2AC026CFE80400179BE1 /* CountriesViewController.swift */; };
@@ -62,6 +64,7 @@
 		C247FADC26CE615F00141971 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C247FADF26CE615F00141971 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C247FAE126CE615F00141971 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C25407B326E32DAC00864942 /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
 		C256A22126D5267D002D4AB4 /* Demo_MVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo_MVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C256A22526D5267D002D4AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C26ED89626CF7AA6003EBBBD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -181,6 +184,7 @@
 				C256A22526D5267D002D4AB4 /* Info.plist */,
 				C2A01EBC26D6544E00BB3C0A /* LoginModule.swift */,
 				C2A01EBE26D655F900BB3C0A /* WeatherModule.swift */,
+				C25407B326E32DAC00864942 /* content.json */,
 			);
 			path = Demo_MVVMTests;
 			sourceTree = "<group>";
@@ -537,6 +541,7 @@
 				C247FAE026CE615F00141971 /* LaunchScreen.storyboard in Resources */,
 				C247FADD26CE615F00141971 /* Assets.xcassets in Resources */,
 				C247FADB26CE615C00141971 /* Main.storyboard in Resources */,
+				C25407B526E32DF300864942 /* content.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +549,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25407B426E32DAC00864942 /* content.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

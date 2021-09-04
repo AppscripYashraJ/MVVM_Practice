@@ -48,17 +48,25 @@ class WeatherViewModelTest: XCTestCase {
         sut = nil
         super.tearDown()
     }
+
+    func test_validCountryName(){
+        let validCountryName = "China"
+        sut.initFetchData(validCountryName)
+        XCTAssertEqual(validCountryName, sut.countryName)
+        XCTAssertNotNil(sut.countryName)
+        XCTAssertNotNil(sut.weatherDescription)
+        XCTAssertNotNil(sut.temperature)
+    }
     
-    func adb(){
-        sut.initFetchData("India")
+    func test_ValidVMData(){
+        let validCountryNAme = "China"
+        let validWeatherDescription = "Scattered Clouds"
+        let validTemp = "26.38º Celcius"
+        sut.initFetchData(validCountryNAme)
+        
+        XCTAssertEqual(validCountryNAme, sut.countryName)
+        XCTAssertEqual(validWeatherDescription, sut.weatherDescription)
+        XCTAssertEqual(validTemp, sut.temperature)
     }
 }
 
-
-class MockAPIService:WeatherLoaderProtocol {
-    
-    var completionClosure: ((Weather) -> ())?
-    func loadWeatherData(countryName: String, completion: @escaping (Weather?) -> Void) {
-        completionClosure = completion
-    }
-}

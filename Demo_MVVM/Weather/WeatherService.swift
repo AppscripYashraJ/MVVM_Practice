@@ -73,16 +73,3 @@ class ServiceLayer{
         task.resume()
     }
 }
-
-class APIService: WeatherLoaderProtocol {
-    func loadWeatherData(countryName: String, completion: @escaping (Weather?) -> Void) {
-        ServiceLayer.request(router: Router.getWeatherData(countryName)) { (result:Result<Weather,Error>) in
-            switch result{
-            case .success(let data):
-                completion(data)
-            case .failure(_):
-                completion(nil)
-            }
-        }
-    }
-}
