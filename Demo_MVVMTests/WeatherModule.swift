@@ -68,5 +68,11 @@ class WeatherViewModelTest: XCTestCase {
         XCTAssertEqual(validWeatherDescription, sut.weatherDescription)
         XCTAssertEqual(validTemp, sut.temperature)
     }
+    
+    func test_noData(){
+        let validCountryNAme = "India"
+        sut.initFetchData(validCountryNAme)
+        XCTAssertNil(sut.countryName)
+    }
 }
 
